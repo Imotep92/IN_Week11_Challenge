@@ -2030,7 +2030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &258697217
 Transform:
   m_ObjectHideFlags: 0
@@ -2096,7 +2096,7 @@ VisualEffect:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 258697216}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Asset: {fileID: 8926484042661614526, guid: 03e76419fe133418695e7ef8d6252bab, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
@@ -2639,18 +2639,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671d84a1a8b29421db3ea645f8556299, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentVolume: {fileID: 0}
+  skyboxMaterial: {fileID: 2100000, guid: 2632cf571a778434190548923b23cd85, type: 2}
   globalMaterial: {fileID: 2100000, guid: 58d53420af384224ea4cfee8973d18cb, type: 2}
   sunLight: {fileID: 867313193}
-  skyboxMaterial: {fileID: 2100000, guid: 2632cf571a778434190548923b23cd85, type: 2}
   weatherText: {fileID: 0}
-  winterParticleSystem: {fileID: 0}
-  winterVolume: {fileID: 856573912}
-  rainParticleSystem: {fileID: 0}
-  rainVolume: {fileID: 633036348}
-  autumnParticleSystem: {fileID: 0}
-  autumnVolume: {fileID: 711523251}
-  summerParticleSystem: {fileID: 0}
-  summerVolume: {fileID: 0}
+  Winter: {fileID: 1890067265}
+  Autumn: {fileID: 1427055242}
+  Rain: {fileID: 1442581982}
+  Summer: {fileID: 1392367104}
+  _isWinter: 0
+  winterVolume: {fileID: 1378734055}
+  _snowFall: {fileID: 1378734057}
+  _snowMaterial: {fileID: 2100000, guid: 70bc27ee3077b40729fd1f56be9796b2, type: 2}
+  _isRaining: 0
+  rainVolume: {fileID: 1598117185}
+  _rainFall: {fileID: 1598117187}
+  _isAutumn: 0
+  autumnVolume: {fileID: 2104209326}
+  _isSummer: 0
+  summerVolume: {fileID: 845213849}
 --- !u!4 &303072887
 Transform:
   m_ObjectHideFlags: 0
@@ -3893,7 +3901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &408454788
 Transform:
   m_ObjectHideFlags: 0
@@ -4670,7 +4678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &547070583
 Transform:
   m_ObjectHideFlags: 0
@@ -4694,7 +4702,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547070582}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -4736,7 +4744,7 @@ VisualEffect:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547070582}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Asset: {fileID: 8926484042661614526, guid: cf3bf806cba234434869f24f928dd2ac, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
@@ -7838,7 +7846,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845213847}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -11711,7 +11719,7 @@ GameObject:
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1324745306
 Transform:
   m_ObjectHideFlags: 0
@@ -11988,6 +11996,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1378734054}
   - component: {fileID: 1378734055}
+  - component: {fileID: 1378734057}
+  - component: {fileID: 1378734056}
   m_Layer: 0
   m_Name: Winter_Cold
   m_TagString: Untagged
@@ -12017,7 +12027,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378734053}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -12027,6 +12037,87 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 4265237a5007a41d1a7b26c9b9a97ee6, type: 2}
+--- !u!73398921 &1378734056
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378734053}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!2083052967 &1378734057
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378734053}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: 03e76419fe133418695e7ef8d6252bab, type: 3}
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array: []
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array: []
+    m_Vector4f:
+      m_Array: []
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
 --- !u!1001 &1382811773
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12372,7 +12463,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 303072886}
         m_TargetAssemblyTypeName: WeatherSystem, Assembly-CSharp
-        m_MethodName: Summer
+        m_MethodName: SummerWeather
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12902,7 +12993,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 303072886}
         m_TargetAssemblyTypeName: WeatherSystem, Assembly-CSharp
-        m_MethodName: Autumn
+        m_MethodName: AutumnWeather
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13306,7 +13397,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 303072886}
         m_TargetAssemblyTypeName: WeatherSystem, Assembly-CSharp
-        m_MethodName: Rain
+        m_MethodName: RainyWeather
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13331,7 +13422,7 @@ GameObject:
   m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1448118270
 Transform:
   m_ObjectHideFlags: 0
@@ -14738,6 +14829,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1598117184}
   - component: {fileID: 1598117185}
+  - component: {fileID: 1598117187}
+  - component: {fileID: 1598117186}
   m_Layer: 0
   m_Name: Spring_Rain
   m_TagString: Untagged
@@ -14767,7 +14860,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598117183}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
@@ -14777,6 +14870,87 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 1d86bf48f76b245e592c99af89baeaa3, type: 2}
+--- !u!73398921 &1598117186
+VFXRenderer:
+  serializedVersion: 1
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598117183}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!2083052967 &1598117187
+VisualEffect:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598117183}
+  m_Enabled: 1
+  m_Asset: {fileID: 8926484042661614526, guid: cf3bf806cba234434869f24f928dd2ac, type: 3}
+  m_InitialEventName: 
+  m_InitialEventNameOverriden: 1
+  m_StartSeed: 0
+  m_ResetSeedOnPlay: 1
+  m_AllowInstancing: 1
+  m_ResourceVersion: 1
+  m_PropertySheet:
+    m_Float:
+      m_Array: []
+    m_Vector2f:
+      m_Array: []
+    m_Vector3f:
+      m_Array: []
+    m_Vector4f:
+      m_Array: []
+    m_Uint:
+      m_Array: []
+    m_Int:
+      m_Array: []
+    m_Matrix4x4f:
+      m_Array: []
+    m_AnimationCurve:
+      m_Array: []
+    m_Gradient:
+      m_Array: []
+    m_NamedObject:
+      m_Array: []
+    m_Bool:
+      m_Array: []
 --- !u!1001 &1600624450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17773,7 +17947,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 303072886}
         m_TargetAssemblyTypeName: WeatherSystem, Assembly-CSharp
-        m_MethodName: Winter
+        m_MethodName: WinterWeather
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19100,7 +19274,7 @@ GameObject:
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2011483820
 Transform:
   m_ObjectHideFlags: 0
@@ -19707,7 +19881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2104209325
 Transform:
   m_ObjectHideFlags: 0
@@ -19730,7 +19904,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104209324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 

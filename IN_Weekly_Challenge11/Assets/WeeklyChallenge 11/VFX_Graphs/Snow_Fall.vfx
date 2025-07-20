@@ -213,7 +213,7 @@ MonoBehaviour:
   uiBounds:
     serializedVersion: 2
     x: 164
-    y: -490
+    y: -491
     width: 1006
     height: 2480
 --- !u!114 &114350483966674976
