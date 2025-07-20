@@ -62,19 +62,19 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1.36
+    m_Value: 1.31
   contrast:
     m_OverrideState: 1
-    m_Value: 7.5
+    m_Value: -18
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: -2
   saturation:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: -34
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +93,7 @@ MonoBehaviour:
   - {fileID: 3999835542605287320}
   - {fileID: 7626486437804906889}
   - {fileID: 3076794352591533256}
+  - {fileID: 7063892513035840177}
 --- !u!114 &3076794352591533256
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -135,17 +136,45 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {x: 0.96507037, y: 1, z: 0.95438534, w: 0.056657232}
   shadowsStart:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   shadowsEnd:
-    m_OverrideState: 0
-    m_Value: 0.3
+    m_OverrideState: 1
+    m_Value: 0.69
   highlightsStart:
-    m_OverrideState: 0
-    m_Value: 0.55
+    m_OverrideState: 1
+    m_Value: 0.61
   highlightsEnd:
+    m_OverrideState: 1
+    m_Value: 1.03
+--- !u!114 &7063892513035840177
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899c54efeace73346a0a16faa3afe726, type: 3}
+  m_Name: Vignette
+  m_EditorClassIdentifier: 
+  active: 1
+  color:
+    m_OverrideState: 1
+    m_Value: {r: 0.15779635, g: 0.16019934, b: 0.16981131, a: 1}
+  center:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: {x: 0.5, y: 0.5}
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.462
+  smoothness:
+    m_OverrideState: 1
+    m_Value: 0.139
+  rounded:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &7626486437804906889
 MonoBehaviour:
   m_ObjectHideFlags: 3

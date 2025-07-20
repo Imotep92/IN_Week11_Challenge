@@ -16,7 +16,7 @@ public class WeatherSystem : MonoBehaviour
 
     #region Winter Variables 
     [Header("Winter Assets")]
-    //public ParticleSystem winterParticleSystem;
+
     [SerializeField] bool _isWinter;
     [SerializeField] Volume winterVolume;
     [SerializeField] VisualEffect _snowFall;
@@ -57,36 +57,36 @@ public class WeatherSystem : MonoBehaviour
 
     }
 
-    public void SummerWeather()
+    public void SummerWeather() // Summer Weather Method
     {
-        DisableWintertWeather();
+        DisableWintertWeather();  //disable winter
 
-        DisableRainyWeather();
+        DisableRainyWeather();  // disable rainy
 
-        DisableAutumnWeather();
+        DisableAutumnWeather(); // disable Autumn
 
-        if (_currentVolume == null || !_isSummer)
+        if (_currentVolume == null || !_isSummer) // if the current volume value is not set or _isSummer is set to false
         {
-            _isSummer = true;
-            summerVolume.enabled = true;
+            _isSummer = true; // set summer to true
+            summerVolume.enabled = true; // set summer Volume to true
             //globalMaterial.SetFloat("SnowFade", 0);
             Debug.Log("It is Summer");
         }
-        _currentVolume = summerVolume;
+        _currentVolume = summerVolume; // current volume is equal to summer volume
     }
-    private void DisableSummerWeather()
+    private void DisableSummerWeather() // Disable Summer Weather Method
     {
-        if (_currentVolume = summerVolume)
+        if (_currentVolume = summerVolume) // if current volume is equal to summer volume
         {
-            _currentVolume = null;
+            _currentVolume = null; // reset current volume value to null
             Debug.Log("_currentVolume is null");
-            _isSummer = false;
-            summerVolume.enabled = false;
+            _isSummer = false; // set summer to false
+            summerVolume.enabled = false; // set summer Volume to false
             Debug.Log("Summer has stopped");
         }
     }
 
-    public void WinterWeather()
+    public void WinterWeather() // Winter Weather Method
     {
         DisableSummerWeather();
 
@@ -105,7 +105,7 @@ public class WeatherSystem : MonoBehaviour
         _currentVolume = winterVolume;
     }
 
-    private void DisableWintertWeather()
+    private void DisableWintertWeather() // Disable Winter Weather Method
     {
         if (_currentVolume = winterVolume)
         {
@@ -119,7 +119,7 @@ public class WeatherSystem : MonoBehaviour
         }
     }
 
-    public void RainyWeather()
+    public void RainyWeather() // Rainy Weather Method
     {
         DisableSummerWeather();
 
@@ -138,7 +138,7 @@ public class WeatherSystem : MonoBehaviour
         Debug.Log("It is Raining/Spring");
     }
 
-    private void DisableRainyWeather()
+    private void DisableRainyWeather() // Disable Rainy Weather Method
     {
         if (_currentVolume = rainVolume)
         {
@@ -151,7 +151,7 @@ public class WeatherSystem : MonoBehaviour
         }
     }
 
-    public void AutumnWeather()
+    public void AutumnWeather() // Autumn Weather Method
     {
         DisableSummerWeather();
 
@@ -169,7 +169,7 @@ public class WeatherSystem : MonoBehaviour
         Debug.Log("It is Autumn");
     }
 
-    private void DisableAutumnWeather()
+    private void DisableAutumnWeather() // Disable Autumn Weather Method
     {
         if (_currentVolume = autumnVolume)
         {

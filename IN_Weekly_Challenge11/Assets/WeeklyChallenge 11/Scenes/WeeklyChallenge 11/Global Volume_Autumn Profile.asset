@@ -18,21 +18,21 @@ MonoBehaviour:
     m_Value: {x: 1, y: 0.65925205, z: 0.59311676, w: 0}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9281041, z: 0.8057389, w: 0}
+    m_Value: {x: 1, y: 0.9281041, z: 0.8057389, w: -0.057034213}
   highlights:
     m_OverrideState: 1
     m_Value: {x: 1, y: 0.992685, z: 0.9622749, w: 0}
   shadowsStart:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   shadowsEnd:
-    m_OverrideState: 0
-    m_Value: 0.3
+    m_OverrideState: 1
+    m_Value: 0.37
   highlightsStart:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.55
   highlightsEnd:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
 --- !u!114 &-7565500981036560952
 MonoBehaviour:
@@ -48,8 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   mode:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 2
   gaussianStart:
     m_OverrideState: 0
     m_Value: 10
@@ -63,17 +63,17 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   focusDistance:
-    m_OverrideState: 0
-    m_Value: 10
+    m_OverrideState: 1
+    m_Value: 30
   aperture:
-    m_OverrideState: 0
-    m_Value: 5.6
+    m_OverrideState: 1
+    m_Value: 11.3
   focalLength:
-    m_OverrideState: 0
-    m_Value: 50
+    m_OverrideState: 1
+    m_Value: 66
   bladeCount:
     m_OverrideState: 0
-    m_Value: 5
+    m_Value: 3
   bladeCurvature:
     m_OverrideState: 0
     m_Value: 1
@@ -95,10 +95,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: -0.04
   contrast:
     m_OverrideState: 1
-    m_Value: 0.8
+    m_Value: 14
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -107,7 +107,7 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 5.8
+    m_Value: -1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +141,7 @@ MonoBehaviour:
   active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: 75.9
+    m_Value: 59
   tint:
     m_OverrideState: 1
     m_Value: 0
